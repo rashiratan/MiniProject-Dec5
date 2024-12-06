@@ -2,14 +2,16 @@ import { useEffect } from 'react';
 import { useState } from 'react'
 import './App.css'
 import BarChart from './Components/BarChart';
+import BubbleChart from './Components/BubbleChart';
 
 
 function App() {
   const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
-    fetch('public/data.json')
-      .then((data) => setChartData(data));
+    fetch('/financial_data.json')
+    .then((response) => response.json())
+    .then((data) => setChartData(data));
   }, []);
 
   if (!chartData) {
@@ -21,6 +23,7 @@ function App() {
       <div style={{ textAlign: 'center' }}>
       <h1>Dynamic Charts with React and Chart.js</h1>
       <BarChart data={chartData} />
+      <BubbleChart data={chartData}/>
       
       </div>
   )

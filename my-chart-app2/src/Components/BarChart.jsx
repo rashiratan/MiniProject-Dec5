@@ -16,10 +16,13 @@ const BarChart = ({ data }) => {
       ],
     };
 
+
     const barChartOptions = {
         scales: {
           y: {
             beginAtZero: true,
+            max: 300,
+            ticks: {stepsize: 100}
           },
         },
       };
