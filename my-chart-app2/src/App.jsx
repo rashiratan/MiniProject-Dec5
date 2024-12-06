@@ -8,8 +8,7 @@ function App() {
   const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
-    fetch('/data.json')
-      .then((response) => response.json())
+    fetch('public/data.json')
       .then((data) => setChartData(data));
   }, []);
 
