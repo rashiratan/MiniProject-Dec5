@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import ChartComponent from './ChartComponent';
 
-const BarChart = ({ data }) => {
-    const barChartData = {
+const LineChart = ({ data }) => {
+    const lineChartData = {
       labels: data.months,
       datasets: [
         {
-          label: 'Monthly Sales',
-          data: data.sales,
+          label: 'Monthly Profits',
+          data: data.profits,
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
@@ -17,17 +17,16 @@ const BarChart = ({ data }) => {
     };
 
 
-    const barChartOptions = {
+    const lineChartOptions = {
         scales: {
           y: {
-            beginAtZero: true,
-            ticks: {stepsize: 50}
+            beginAtZero: false
           },
         },
       };
 
-      return <ChartComponent type="bar" data={barChartData} options={barChartOptions} />;
+      return <ChartComponent type="line" data={lineChartData} options={lineChartOptions} />;
     };
 
 
-export default BarChart;
+export default LineChart;

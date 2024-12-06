@@ -3,6 +3,8 @@ import { useState } from 'react'
 import './App.css'
 import BarChart from './Components/BarChart';
 import BubbleChart from './Components/BubbleChart';
+import LineChart from './Components/LineChart';
+import ScatterChart from './Components/ScatterChart';
 
 
 function App() {
@@ -24,7 +26,8 @@ function App() {
       <h1>Dynamic Charts with React and Chart.js</h1>
       <BarChart data={chartData} />
       <BubbleChart data={chartData}/>
-      
+      <LineChart data={chartData}/>
+      <ScatterChart data={chartData}/>
       </div>
   )
 }
